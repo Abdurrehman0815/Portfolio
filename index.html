@@ -1,406 +1,729 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - Abdur Rehman</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdur Rehman - Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <style>
+        /* Import Inter font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Lighter background for modern feel */
+            color: #333; /* Darker text for better contrast */
+            line-height: 1.6;
+        }
 
+        .navbar {
+            background-color: #1a202c; /* Darker, more professional navbar */
+            border-bottom-left-radius: 1.5rem;
+            border-bottom-right-radius: 1.5rem;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
 
-    <!-- bootstrap css cdn link  -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
+        .navbar-nav .nav-link {
+            color: #e2e8f0 !important; /* Lighter text for nav links */
+            padding: 0.85rem 1.4rem;
+            border-radius: 0.75rem;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, text-decoration 0.3s ease; /* Added text-decoration transition */
+            font-weight: 500;
+            letter-spacing: 0.025em;
+            margin: 0 0.5rem; /* Added horizontal margin for spacing between buttons */
+            text-decoration: none; /* Remove default underline */
+            position: relative; /* For custom underline */
+        }
 
-    <!-- custom css file -->
-    <link rel="stylesheet" href="css/style.css" />
-
-    <!-- google font link -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- bootstrap icon cdn link  -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
-    />
-
-    <!-- for adding animation to website we have use AOS library 
-    AOS Library css file cdn link -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-    <!-- jquery cdn link  -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
-    <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
- </script>
-   <script type="text/javascript">
-     (function(){
-       emailjs.init({
-    publicKey: "VB0bTIS9ubhIrOFhQ",
-         });
-     })();
-     </script>
-
-<style>
-  a {
-    text-decoration: none;
-  }
-  
-  .c-btn {
-    text-decoration: none;
-  }
-  
-  </style>
-  </head>
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 3px; /* Underline thickness */
+            background-color: #3182ce; /* Underline color */
+            left: 50%;
+            bottom: 0.5rem; /* Distance from text */
+            transform: translateX(-50%);
+            transition: width 0.3s ease-out;
+        }
 
 
-  <body>
-    <!-- navbar starts -->
-    <nav
-      id="navbar-top"
-      class="navbar navbar-expand-lg navbar-light bg-white sticky-top"
-    >
-      <div class="container-fluid px-5">
-        <a class="navbar-brand fw-bold fs-2" href="#" style="color: #3f396d"
-          >Portfolio</a
-        >
-        <button
-          class="nav-menu d-md-none"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <i class="bi bi-menu-button-fill"></i>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-center"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav gap-4" style="font-size: 1.1rem">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#service">Service</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#portfolio">Portfolio</a>
-            </li>
-           
-            
-          </ul>
-        </div>
-        <a href="#contact"><button class="c-btn ms-4 py-2 px-4 rounded-pill d-none d-md-block">Contact</button></a>
-      </div>
-    </nav>
-    <!-- navbar ends here -->
+        .navbar-nav .nav-link:hover::after {
+            width: 70%; /* Width of underline on hover */
+        }
 
-    <!-- home section starts  -->
-    <section class="home pt-5 pb-5" id="home">
-      <div class="row justify-content-evenly align-middle">
-        <!-- here data-aos is used for adding aos animation  -->
-        <div class="col-10 col-md-6 text-center text-md-start" data-aos="slide-right">
-          <h2 style="color: #3f396d">
-            Hello! I Am <br /><span class="c-orange">Abdur Rehman</span>
-          </h2>
-          <p class="text-muted">
-            Passionate Web Developer | Crafting Websites | Exploring Back-End Solutions
-          </p>
-          <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill" id="btn1">
-              Resume
-          </button>
-        </div>
-        <div class="col-10 col-md-4 d-none d-md-block">
-          <img src="images/banner-01.webp" class="img-fluid" alt="" />
-        </div>
-      </div>
-    </section>
-    <!-- home section ends here -->
+        .navbar-nav .nav-link.active {
+            background-color: transparent !important; /* No background color when active */
+            color: #3182ce !important; /* Change text color when active */
+            box-shadow: none !important; /* No shadow when active */
+            transform: translateY(0) !important; /* No transform when active */
+        }
 
-    <!-- expertise section starts -->
-    <section class="expertise mt-5" id="service">
-      <div class="heading text-center">
-        <small>My Expertise</small>
-        <h3>
-          Crafting Digital Solutions for Excellence
-        </h3>
-      </div>
-      <div class="row justify-content-evenly mt-5">
-        <div class="col-10 col-md-4" data-aos="fade-up">
-          <div class="service-card">
-            <div class="img">
-              <img
-                src="images/service-icon1.png"
-                class="w-25 img-fluid img"
-                alt=""
-              />
-            </div>
-            <div class="content mt-3">
-              <h4>Web Design</h4>
-              <p class="text-muted">
-                Crafting Stunning and User-Friendly Web Interfaces
-              </p>
-             
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-10" data-aos="fade-up">
-          <div class="service-card">
-            <div class="img">
-              <img
-                src="images/service-icon2.png"
-                class="w-25 img-fluid img"
-                alt=""
-              />
-            </div>
-            <div class="content mt-3">
-              <h4>Web Development</h4>
-              <p class="text-muted">
-                Building Robust and Scalable Web Solutions
-              </p>
-             
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-10" data-aos="fade-up">
-          <div class="service-card">
-            <div class="img">
-              <img
-                src="images/service-icon3.png"
-                class="w-25 img-fluid img"
-                alt=""
-              />
-            </div>
-            <div class="content mt-3">
-              <h4>Debugging</h4>
-              <p class="text-muted">
-                Ensuring Seamless Functionality with Expert Debugging
-              </p>
-             
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- expertise section ends here -->
-
-    <!-- skill section starts -->
-    <section class="skill mt-5 py-5" id="about">
-      <div class="row justify-content-evenly">
-        <div class="col-10 col-md-5 skill-with-images" data-aos="slide-right">
-          <div class="row">
-            <div class="col-4 col-sm-4">
-              <div class="circle-icon">
-                <img src="images/py.png" alt="Python" class="skill-image html-css">
-              </div>
-              <br />
-              <span class="text">Python</span>
-            </div>
-            <div class="col-4 col-sm-4">
-              <div class="circle-icon">
-                <img src="images/js.png" alt="JavaScript" class="skill-image javascript">
-              </div>
-              <br />
-              <span class="text">JavaScript</span>
-            </div>
-            <div class="col-4 col-sm-4">
-              <div class="circle-icon">
-                <img src="images/git.png" alt="Git" class="skill-image php">
-              </div>
-              <br />
-              <span class="text">Git</span>
-            </div>
-            <div class="col-4 col-sm-4 mt-4" >
-              <div class="circle-icon">
-                <img src="images/react.png" alt="ReactJS" class="skill-image reactjs">
-              </div>
-              <br />
-              <span class="text">React</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-10 col-md-5 skill-detail" data-aos="slide-left">
-          <div class="heading mt-5 mt-md-3">
-            <small>My Skills</small>
-            <h3>Innovative Solutions, Crafted for Impact</h3>
-            <p class="text-muted">
-              I excel in creating web experiences that are both functional and visually striking. From intuitive designs to robust back-end solutions and precise debugging,
-            </p>
-            <p class="text-muted">
-              I ensure each project is optimized for performance and user satisfaction.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    
-    <!-- skill section end here -->
-
-    <!-- portfolio section starts here -->
-    <section class="portfolio" id="portfolio">
-      <div class="heading text-center pt-5">
-        <small>Creative Work</small>
-        <h3>Check My Portfolio</h3>
-      </div>
-      <div class="portfolio-body">
-        <div class="row justify-content-evenly px-4">
-          <div class="post col-md-4 game all col-10 mt-3 mt-md-0" data-aos="fade-up">
-            <div class="card">
-              <img src="images/image.png" class="card-img-top" alt="..." />
-              <div class="card-body text-center">
-                <h4 class="card-title">Music BeatBox</h4>
-                <span class="badge bg-secondary badge-pill">React</span>
-                <span class="badge bg-secondary badge-pill">Tailwind</span>
-                <span class="badge bg-secondary badge-pill mb-2">Web App</span
-                ><br />
-                <a href="https://arbeatbox.netlify.app/" target="_blank" class="link">Demo</a>
-              </div>
-            </div>
-          </div>
-          
-          
-          
-        </div>
-       
-          
-          
-        </div>
-      </div>
-    </section>
-    <!-- portfolio section ends here -->
+        .navbar-nav .nav-link.active::after {
+            width: 70%; /* Underline always visible when active */
+        }
 
 
+        .section-container {
+            background-color: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2.5rem; /* Slightly more space between sections */
+            padding: 3rem; /* Increased padding for more breathing room within sections */
+            opacity: 0; /* Hidden by default for animation */
+            transform: translateY(30px); /* Slightly move down for animation */
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
 
-    <!-- contact section starts -->
-    <section class="contact py-5" id="contact">
-      <div class="heading text-center">
-        <h3>Get in Touch</h3>
-      </div>
-      <div class="row justify-content-evenly mt-5">
-        <div class="col-md-5 col-10 contact-details" data-aos="slide-right">
-          <div class="row justify-content-evenly mb-2">
-            <div class="col-1">
-              <i class="bi bi-telephone-fill"></i>
-            </div>
-            <div class="col-11">
-              <p>+91 8825852872</p>
-            </div>
-          </div>
-          <div class="row justify-content-evenly mb-3">
-            <div class="col-1">
-              <i class="bi bi-send-fill"></i>
-            </div>
-            <div class="col-11">
-              <p>abdurrehmanjfama@gmail.com</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <a href="https://www.linkedin.com/in/abdur-rehman-0736bb24a" target="_blank"><button class="rounded-pill social-link linkedin">
-                <i class="bi bi-linkedin"></i>
-              </button></a> &nbsp;
-             <a href="https://github.com/Abdurrehman0815" target="_blank"> <button class="rounded-pill social-link github">
-                <i class="bi bi-github"></i>
-              </button></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-5 col-10 mt-3 mt-md-0" data-aos="slide-left">
-          <div class="contact-form">
-            <form id="contact-form">
-            <div class="mb-3">
-              <input type="text" class="form-control" id="name" name="name" placeholder="Name" required />
-            </div>
-            <div class="mb-3">
-              <input type="email" class="form-control" id="email" name="email" placeholder="E-mail" required />
-            </div>
-            <div class="mb-3">
-              <input type="text" class="form-control" id="phone" name="phone" placeholder="Mobile No." required />
-            </div>
-            <div class="mb-3">
-              <textarea class="form-control" id="message" name="message" placeholder="Message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">
-              Submit
+        .section-container.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-size: 1.8rem; /* Reduced font size for main headings (closer to h3/h4) */
+            font-weight: 800;
+            color: #212529;
+            margin-bottom: 2rem; /* More space below title */
+            padding-bottom: 0.75rem;
+            border-bottom: 5px solid #3182ce; /* Thicker blue underline */
+            display: inline-block;
+            letter-spacing: -0.025em; /* Tighter letter spacing for titles */
+        }
+
+        h3 {
+            font-size: 1.5rem; /* Reduced font size for sub-titles (like education degrees, project titles) */
+            font-weight: 700;
+            color: #343a40;
+            margin-bottom: 1rem;
+        }
+
+        .profile-img {
+            width: 14rem; /* Slightly larger image */
+            height: 14rem;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #3182ce; /* Thicker blue border */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.08) rotate(2deg); /* More dynamic hover effect */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        .info-item svg {
+            margin-right: 0.5rem;
+            color: #3182ce; /* Icon color */
+        }
+
+        .card-custom {
+            background-color: #f8f9fa;
+            border-radius: 1rem;
+            padding: 1.75rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Ensure consistent height for cards in flex containers */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Specific height for education and project cards */
+        .education-card, .project-card-item {
+            height: auto; /* Allow content to define height initially */
+            min-height: 220px; /* Set a minimum height for uniformity */
+        }
+
+        .skill-badge {
+            background-color: #f3e5f5; /* Light purple for technical skills */
+            color: #8e24aa; /* Darker purple text */
+            padding: 0.6rem 1.2rem;
+            border-radius: 2rem;
+            font-size: 0.95rem; /* Adjusted font size for badges */
+            font-weight: 600;
+            margin-right: 0.6rem;
+            margin-bottom: 0.6rem;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .skill-badge:hover {
+            background-color: #e1bee7;
+            transform: translateY(-3px);
+        }
+        /* Specific colors for Soft Skills badges */
+        #soft-skills-list .skill-badge {
+            background-color: #e0f7fa; /* Lighter teal */
+            color: #00796b; /* Darker teal text */
+        }
+        #soft-skills-list .skill-badge:hover {
+            background-color: #b2ebf2;
+        }
+
+        /* Specific colors for Linguistic Skills badges */
+        #linguistic-skills-list .skill-badge {
+            background-color: #f0f9eb; /* Lighter green */
+            color: #52c41a; /* Darker green text */
+        }
+        #linguistic-skills-list .skill-badge:hover {
+            background-color: #d9f7be;
+        }
+
+
+        .project-card .badge {
+            font-size: 0.85rem;
+            padding: 0.5em 0.9em;
+            border-radius: 1rem;
+            font-weight: 500;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.9rem 2rem; /* Larger buttons */
+            border-radius: 0.75rem;
+            font-size: 1.35rem; /* Larger text */
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-link.github {
+            background-color: #24292e; /* GitHub dark */
+            color: #fff;
+        }
+
+        .contact-link.github:hover {
+            background-color: #444;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        .contact-link.linkedin {
+            background-color: #0077b5; /* LinkedIn blue */
+            color: #fff;
+        }
+
+        .contact-link.linkedin:hover {
+            background-color: #005582;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        footer {
+            background-color: #1a202c;
+            color: #e2e8f0;
+            border-top-left-radius: 1.5rem;
+            border-top-right-radius: 1.5rem;
+            box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.15);
+            padding: 1.5rem 0;
+        }
+
+        /* Added margin-bottom to list items within achievements and certifications */
+        #achievements-list li, #certifications-list li {
+            margin-bottom: 0.75rem; /* Space between list items */
+        }
+        /* Remove margin from the last item to avoid extra space at the bottom */
+        #achievements-list li:last-child, #certifications-list li:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .education-card, .skill-category-card, .project-card-item {
+                flex-basis: calc(50% - 1.5rem) !important; /* 2 items per row on medium screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 1.8rem; /* Adjusted for smaller screens too */
+                margin-bottom: 1.5rem;
+            }
+            h3 {
+                font-size: 1.3rem; /* Further reduced for small screens */
+            }
+            .section-container {
+                padding: 2rem;
+            }
+            .profile-img {
+                width: 10rem;
+                height: 10rem;
+            }
+            .navbar-brand {
+                font-size: 1.5rem !important;
+            }
+            .navbar-nav .nav-link {
+                padding: 0.6rem 1rem;
+            }
+            .contact-link {
+                padding: 0.75rem 1.25rem;
+                font-size: 1.1rem;
+            }
+            .education-card, .skill-category-card, .project-card-item {
+                flex-basis: 100% !important; /* 1 item per row on small screens */
+            }
+            .about-content {
+                text-align: center; /* Center text on small screens */
+            }
+            .about-contact-info {
+                justify-content: center !important; /* Center contact links on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold fs-4" href="#about">Abdur Rehman</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            </form>
-          </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#achievements">Achievements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
-    </section>
-    
-    <!-- contact section ends here -->
+    </nav>
 
-      <!-- now we will make back to top button when user click on it it will be redirected to top page  -->
-    <button
-      type="button"
-      class="btn btn-floating btn-lg rounded-pill"
-      id="btn-back-to-top"
-    >
-      <i class="bi bi-arrow-up"></i>
-    </button>
+    <!-- Main Content -->
+    <main class="container py-5">
+        <!-- About Section -->
+        <section id="about" class="section-container">
+            <h2 class="mb-4">About Me</h2>
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <img src="profile.JPG" alt="Abdur Rehman" class="profile-img">
+                </div>
+                <div class="col-md-8 about-content text-center text-md-start">
+                    <h3 class="mb-3" id="about-name"></h3>
+                    <p class="lead mb-4" id="about-summary"></p>
+                    <div class="d-flex flex-column flex-md-row about-contact-info justify-content-center justify-content-md-start gap-3">
+                        <a href="#" id="about-email" class="text-decoration-none info-item">
+                            <svg class="me-2" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                            <span class="fw-bold">Email:</span> <span class="ms-2"></span>
+                        </a>
+                        <span id="about-phone" class="info-item">
+                            <svg class="me-2" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zm3 14a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd"></path></svg>
+                            <span class="fw-bold">Phone:</span> <span class="ms-2"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- footer section starts  -->
-    <footer class="text-center text-muted py-4">
-      
+        <!-- Education Section -->
+        <section id="education" class="section-container">
+            <h2 class="mb-4">Education</h2>
+            <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-4" id="education-list">
+                <!-- Education items will be dynamically inserted here -->
+            </div>
+        </section>
 
-     
+        <!-- Skills Section -->
+        <section id="skills" class="section-container">
+            <h2 class="mb-4">Technical Skills</h2>
+            <div id="technical-skills-list" class="d-flex flex-column gap-3">
+                <!-- Technical skills will be dynamically inserted here -->
+            </div>
+
+            <h3 class="mt-5 mb-3 border-bottom pb-2">Soft Skills</h3>
+            <div id="soft-skills-list" class="d-flex flex-wrap gap-3">
+                <!-- Soft skills will be dynamically inserted here -->
+            </div>
+
+            <h3 class="mt-4 mb-3 border-bottom pb-2">Linguistic Skills</h3>
+            <div id="linguistic-skills-list" class="d-flex flex-wrap gap-3">
+                <!-- Linguistic skills will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section-container">
+            <h2 class="mb-4">Projects</h2>
+            <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-4" id="projects-list">
+                <!-- Project cards will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Achievements & Certifications Section -->
+        <section id="achievements" class="section-container">
+            <h2 class="mb-4">Achievements & Certifications</h2>
+            <div class="mb-5">
+                <h3 class="mb-3 border-bottom pb-2">Achievements</h3>
+                <ul class="list-unstyled space-y-3" id="achievements-list">
+                    <!-- Achievements will be dynamically inserted here -->
+                </ul>
+            </div>
+            <div>
+                <h3 class="mb-3 border-bottom pb-2">Certifications</h3>
+                <ul class="list-unstyled space-y-3" id="certifications-list">
+                    <!-- Certifications will be dynamically inserted here -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-container text-center">
+            <h2 class="mb-4 mx-auto">Get in Touch</h2>
+            <p class="lead mb-5">Feel free to connect with me on GitHub or LinkedIn!</p>
+            <div class="d-flex justify-content-center gap-4 flex-wrap">
+                <a href="#" id="contact-github" target="_blank" rel="noopener noreferrer" class="contact-link github">
+                    <svg class="me-2" width="28" height="28" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.47.087.68-.217.68-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.93 0-1.088.39-1.979 1.029-2.673-.103-.253-.446-1.268.098-2.648 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.38.202 2.395.099 2.648.64.694 1.028 1.585 1.028 2.673 0 3.823-2.339 4.67-4.566 4.922.359.307.678.915.678 1.846 0 1.338-.012 2.419-.012 2.747 0 .268.21.576.685.479C19.137 20.188 22 16.425 22 12.017 22 6.484 17.522 2 12 2z" clipRule="evenodd"></path></svg>
+                    GitHub
+                </a>
+                <a href="#" id="contact-linkedin" target="_blank" rel="noopener noreferrer" class="contact-link linkedin">
+                    <svg class="me-2" width="28" height="28" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.325-.028-3.044-1.852-3.044-1.853 0-2.136 1.445-2.136 2.95v5.663H9.591V9.276h3.413v1.578h.048c.453-.863 1.56-1.736 3.395-1.736 3.626 0 4.286 2.37 4.286 5.463v6.225zM4.337 8.063a2.462 2.462 0 01-2.461-2.462 2.462 2.462 0 012.462-2.462c1.35 0 2.461 1.112 2.461 2.462 0 1.35-1.112 2.462-2.462 2.462zm-1.781 12.389h3.562V9.276H2.556v11.176zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.454c.98 0 1.771-.773 1.771-1.729V1.729C24 .774 23.209 0 22.225 0z"></path></svg>
+                    LinkedIn
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 mt-auto">
+        <p>&copy; <span id="current-year"></span> Abdur Rehman. All rights reserved.</p>
     </footer>
-    <!-- footer section ends here -->
 
-      <!-- bootstrap javascript cdn link  -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <!-- AOS library javascript link  -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- Custom JavaScript -->
     <script>
-      // initializing AOS library
-      AOS.init({
-        duration: 1000,
-        offset: 50,
-      });
+        document.addEventListener('DOMContentLoaded', () => {
+            // Your resume data
+            const resumeData = {
+                name: "Abdur Rehman",
+                email: "abdurrehmanjfama@gmail.com",
+                phone: "+91 8825852872",
+                github: "https://github.com/Abdurrehman0815",
+                linkedin: "https://linkedin.com/in/abdur-rehman",
+                summary: "Motivated AI/ML enthusiast with practical experience in Python, deep learning frameworks (TensorFlow, Keras), and model deployment using Flask. Experienced in building CNN and LSTM models for real-world datasets and visualizing data using Matplotlib and Plotly. Eager to contribute to impactful machine learning projects by leveraging strong foundations.",
+                education: [
+                    {
+                        degree: "B. Tech Computer Science and Communication Engineering",
+                        period: "2022-2026 (Pursuing upto 5th Sem)",
+                        institution: "Sri Manakula Vinayagar Engineering College - Pondicherry, India",
+                        gpa: "7.95 CGPA"
+                    },
+                    {
+                        degree: "Higher Secondary Education",
+                        period: "MAY-2022",
+                        institution: "New Modern Vidhya Mandir Hr. Sec. School - Pondicherry, India",
+                        percentage: "72%"
+                    },
+                    {
+                        degree: "Secondary Education",
+                        period: "MAR-2020",
+                        institution: "New Modern Vidhya Mandir Hr. Sec. School - Pondicherry, India",
+                        percentage: "85%"
+                    }
+                ],
+                skills: {
+                    "Programming Languages": ["Python"],
+                    "Web Technologies": ["HTML", "CSS", "JavaScript", "Bootstrap", "React.js", "Flask"],
+                    "Database Systems": ["SQLite3", "Supabase"],
+                    "Data Science & Machine Learning": ["NLP", "CNN", "RNN", "LSTM", "ResNet50", "Generative AI"],
+                    "Tools & Deployment": ["Git", "GitHub", "Flask API Deployment", "Render"],
+                    "Specialized Areas": ["Problem Solving Approach", "Debugging", "Communication"]
+                },
+                projects: [
+                    {
+                        title: "Bone Fracture Detection (Machine Learning)",
+                        type: "Academic Project",
+                        description: "Crafted an advanced CNN model with ResNet50 for precise bone fracture detection in X-ray images.",
+                        technologies: ["Python", "TensorFlow", "Keras", "ResNet50", "CNN"],
+                        githubLink: "https://github.com/Abdurrehman0815/bone-fracture-detection"
+                    },
+                    {
+                        title: "LSTM-Driven Stock Forecasting with Real-Time News",
+                        type: "Collaborative Project",
+                        description: "Developed an LSTM-based tool to predict 60-day stock prices using yFinance data, enriched with real-time financial news and visualized via interactive Plotly dashboards.",
+                        technologies: ["Python (Flask)", "LSTM", "TensorFlow/Keras", "yFinance", "Plotly", "Pandas", "NumPy", "Google RSS news"],
+                        githubLink: "https://github.com/Abdurrehman0815/LSTM-Driven-Stock-Forecasting",
+                        liveDemoLink: "https://stocklyzer.stackio.tech/"
+                    },
+                    {
+                        title: "Intelligent Resume Screening Web App",
+                        type: "Collaborative Project",
+                        description: "Developed an AI-powered resume screening platform with Streamlit and SQLite, featuring secure login, PDF parsing, TF-IDF-based ranking, result history, and data export.",
+                        technologies: ["Python", "Streamlit", "SQLite", "scikit-learn", "pandas", "numpy", "pypdf", "TfidfVectorizer", "cosine similarity", "openpyxl"],
+                        githubLink: "https://github.com/Abdurrehman0815/resume-screening"
+                    },
+                    {
+                        title: "Music Streaming Web Application",
+                        type: "Personal Project",
+                        description: "Implemented real-time music playback and playlist management with an intuitive React.js interface.",
+                        technologies: ["React.js", "Tailwind CSS", "Material – UI"],
+                        githubLink: "https://github.com/Abdurrehman0815/BeatBox",
+                        liveDemoLink: "https://arbeatbox.netlify.app/"
+                    },
+                    {
+                        title: "Ecommerce Web App With Price Negotiation",
+                        type: "Collaborative Project",
+                        description: "Designed and developed a MERN-based e-commerce platform enabling price negotiation with automated deal acceptance logic and Razorpay checkout.",
+                        technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Razorpay", "Chakra UI", "HTML", "CSS", "Vercel", "Render"],
+                        githubLink: "https://github.com/Abdurrehman0815/snagdeal",
+                        liveDemoLink: "https://www.snagdeal.tech/"
+                    }
+                ],
+                certifications: [
+                    "Cloud Infrastructure Foundation (ORACLE)",
+                    "JNCIA-Junos (Juniper Network)",
+                    "Django Web Framework (Meta - COURSERA)",
+                    "Python For Data Science (NPTEL)"
+                ],
+                achievements: [
+                    "Future Tech AI Hackathon | 1st Runner Up - AI-driven Mental Health Chatbot, designed to support mental challenges.",
+                    "Buzz On Earth Hackathon | IIT Kanpur | Top 25 Teams - developing an AI-powered drone system for real-time air quality monitoring.",
+                    "Team Leader | Technovation Hackathon | Sharda University | Recognized among the Top 50 teams nationally in an AI-in-Smart-Grid themed competition.",
+                    "Google Gen AI Hackathon | Google | Led a team to secure a spot among the top 15 teams in the Google Gen AI Hackathon, receiving exclusive goodies for innovation in generative AI."
+                ],
+                linguisticSkills: ["English", "Hindi", "Tamil"],
+                softSkills: ["Communication", "Critical Thinking", "Time Management", "Team Work"]
+            };
+
+            // Function to populate About section
+            function populateAbout() {
+                document.getElementById('about-name').textContent = resumeData.name;
+                document.getElementById('about-summary').textContent = resumeData.summary;
+                const emailLink = document.getElementById('about-email');
+                emailLink.href = `mailto:${resumeData.email}`;
+                emailLink.querySelector('span:last-child').textContent = resumeData.email;
+                document.getElementById('about-phone').querySelector('span:last-child').textContent = resumeData.phone;
+            }
+
+            // Function to populate Education section (Horizontal Box Layout)
+            function populateEducation() {
+                const educationList = document.getElementById('education-list');
+                educationList.innerHTML = ''; // Clear existing content
+                resumeData.education.forEach(edu => {
+                    const card = document.createElement('div');
+                    card.className = 'card-custom education-card'; // Added specific class for education cards
+                    card.style.flexBasis = 'calc(33.33% - 1.5rem)'; // 3 items per row on large screens
+                    card.style.minWidth = '280px'; // Minimum width for responsiveness
+
+                    card.innerHTML = `
+                        <h3 class="card-title text-primary mb-2">${edu.degree}</h3>
+                        <p class="card-subtitle mb-2 text-muted fst-italic">${edu.institution}</p>
+                        <p class="card-text text-secondary mb-1">${edu.period}</p>
+                        ${edu.gpa ? `<p class="card-text text-secondary mb-1">CGPA: ${edu.gpa}</p>` : ''}
+                        ${edu.percentage ? `<p class="card-text text-secondary mb-1">Percentage: ${edu.percentage}</p>` : ''}
+                    `;
+                    educationList.appendChild(card);
+                });
+            }
+
+            // Function to populate Skills section
+            function populateSkills() {
+                const technicalSkillsList = document.getElementById('technical-skills-list');
+                technicalSkillsList.innerHTML = '';
+                for (const category in resumeData.skills) {
+                    const skillCategoryDiv = document.createElement('div');
+                    skillCategoryDiv.className = 'd-flex flex-column mb-3'; // Container for category title and badges
+                    skillCategoryDiv.innerHTML = `
+                        <h3 class="card-title mb-2 fs-5">${category}:</h3>
+                        <div class="d-flex flex-wrap gap-2">
+                            ${resumeData.skills[category].map(skill => `<span class="skill-badge">${skill}</span>`).join('')}
+                        </div>
+                    `;
+                    technicalSkillsList.appendChild(skillCategoryDiv);
+                }
+
+                const softSkillsList = document.getElementById('soft-skills-list');
+                softSkillsList.innerHTML = resumeData.softSkills.map(skill => `<span class="skill-badge bg-primary-subtle text-primary">${skill}</span>`).join('');
+
+                const linguisticSkillsList = document.getElementById('linguistic-skills-list');
+                linguisticSkillsList.innerHTML = resumeData.linguisticSkills.map(skill => `<span class="skill-badge bg-success-subtle text-success">${skill}</span>`).join('');
+            }
+
+            // Function to populate Projects section
+            function populateProjects() {
+                const projectsList = document.getElementById('projects-list');
+                projectsList.innerHTML = '';
+                resumeData.projects.forEach(project => {
+                    const card = document.createElement('div');
+                    card.className = 'card-custom project-card-item'; // Added specific class for project cards
+                    card.style.flexBasis = 'calc(33.33% - 1.5rem)'; // 3 items per row on large screens
+                    card.style.minWidth = '280px'; // Minimum width for responsiveness
+
+                    let projectLinksHtml = '';
+                    if (project.githubLink) {
+                        projectLinksHtml += `
+                            <a href="${project.githubLink}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38C13.71 14.53 16 11.54 16 8c0-4.42-3.58-8-8-8"/>
+                                </svg>
+                                GitHub
+                            </a>
+                        `;
+                    }
+                    if (project.liveDemoLink) {
+                        projectLinksHtml += `
+                            <a href="${project.liveDemoLink}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                                    <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.146L6.354 9.146a.5.5 0 1 0 .708.708L15 1.707V4.5a.5.5 0 0 0 1 0z"/>
+                                </svg>
+                                Live Demo
+                            </a>
+                        `;
+                    }
+                    
+                    card.innerHTML = `
+                        <h3 class="card-title text-dark mb-2">${project.title}</h3>
+                        <p class="card-subtitle mb-2 text-primary">${project.type}</p>
+                        <p class="card-text text-muted mb-3">${project.description}</p>
+                        <div class="d-flex flex-wrap gap-2 mt-auto">
+                            ${project.technologies.map(tech => `<span class="badge bg-info-subtle text-info">${tech}</span>`).join('')}
+                        </div>
+                        <div class="mt-3 d-flex justify-content-between">
+                            ${projectLinksHtml}
+                        </div>
+                    `;
+                    projectsList.appendChild(card);
+                });
+            }
+
+            // Function to populate Achievements & Certifications section
+            function populateAchievementsCertifications() {
+                const achievementsList = document.getElementById('achievements-list');
+                achievementsList.innerHTML = '';
+                resumeData.achievements.forEach(achievement => {
+                    const li = document.createElement('li');
+                    li.className = 'bg-warning-subtle text-warning-emphasis p-3 rounded-3 shadow-sm';
+                    li.textContent = achievement;
+                    achievementsList.appendChild(li);
+                });
+
+                const certificationsList = document.getElementById('certifications-list');
+                certificationsList.innerHTML = '';
+                resumeData.certifications.forEach(cert => {
+                    const li = document.createElement('li');
+                    li.className = 'bg-success-subtle text-success-emphasis p-3 rounded-3 shadow-sm';
+                    li.textContent = cert;
+                    certificationsList.appendChild(li);
+                });
+            }
+
+            // Function to populate Contact section
+            function populateContact() {
+                document.getElementById('contact-github').href = resumeData.github;
+                document.getElementById('contact-linkedin').href = resumeData.linkedin;
+            }
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Initialize all sections
+            populateAbout();
+            populateEducation();
+            populateSkills();
+            populateProjects();
+            populateAchievementsCertifications();
+            populateContact();
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('.navbar-nav .nav-link').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - document.querySelector('.navbar').offsetHeight,
+                            behavior: 'smooth'
+                        });
+                    }
+
+                    // Update active class for navbar links
+                    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
+
+            // Intersection Observer for section animations
+            const sections = document.querySelectorAll('.section-container');
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when 10% of the section is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        // No longer unobserve, so sections can re-animate if scrolled out and back in
+                    } else {
+                        // Optionally remove animate-in class if you want sections to re-animate on scroll back
+                        // entry.target.classList.remove('animate-in');
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Highlight active nav link on scroll
+            window.addEventListener('scroll', () => {
+                let currentSection = '';
+                sections.forEach(section => {
+                    // Adjust offset for sticky navbar
+                    const sectionTop = section.offsetTop - document.querySelector('.navbar').offsetHeight - 1;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+
+                document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(currentSection)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
     </script>
-
-   
-
-    <script>
-      // Handle form submission
-      document.addEventListener('DOMContentLoaded', function() {
-      document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        emailjs.sendForm('service_tvq8h89', 'template_3brvecw', this)
-          .then(function() {
-            alert('Message sent successfully!');
-          }, function(error) {
-            console.log('FAILED...', error);
-            alert('Failed to send the message. Please try again.');
-          });
-      });
-    });
-
-    
-    </script>
-      <!-- custom js file linking -->
-      <script src="js/script.js"></script>
-    
-  </body>
+</body>
 </html>
